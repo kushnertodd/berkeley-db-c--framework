@@ -1,3 +1,4 @@
+
 # Prerequisites
 *.d
 
@@ -30,3 +31,14 @@
 *.exe
 *.out
 *.app
+
+# idea
+.idea/
+cmake-build-debug/
+*/cmake-build-debug/
+
+archive/
+.idea/
+CMakeFiles/
+*.log
+.*.swp
