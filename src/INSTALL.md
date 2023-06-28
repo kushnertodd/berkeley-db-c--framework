@@ -1,5 +1,5 @@
-# IMDB Berkeley DB build tools and libraries installation <a id="build-tools-and-libraries-installation"/>
-IMDB Berkeley DB may be built for Linux or Windows.
+# Berkeley DB C++ Framework build tools and libraries installation <a id="build-tools-and-libraries-installation"/>
+Berkeley DB C++ Framework may be built for Linux or Windows.
 Instructions to build for these platforms follow.
 
 # Table of Contents
@@ -27,9 +27,6 @@ Instructions to build for these platforms follow.
     - [Berekley DB](#berekley-db-development)
     - [Json-c](#json-c-development)
     - [OATPP++ application server](#oatpp++-application-server-development)
-- [IMDB database](#imdb-database-development)
-  - [IMDB database Linux Installation](#imdb-database-linux-installation)
-  - [IMDB database Windows Installation](#imdb-database-windows-installation)
 
 # Linux development tools and libraries <a id="linux-development"/>
 These are instructions to prepare the Linux build environment.
@@ -45,7 +42,7 @@ Linux development tools include:
 
 ### JetBrains CLion <a id="jetbrains-clion"/>
 [JetBrains CLion](https://www.jetbrains.com/clion/download/#section=windows) is a free C++ IDE.
-IMDB Berekeley DB is a Cmake project.
+The Berekeley DB C++ Framework is a Cmake project.
 JetBrains has a 
 [tutorial](https://www.jetbrains.com/help/clion/quick-cmake-tutorial.html)
 on setting up CLion for a Cmake project.
@@ -112,7 +109,7 @@ $ sudo apt-get update
 $ sudo apt install git
 ```
 ### Cmake <a id="linux-cmake-tool"/>
-IMDB Berkeley DB is written in C++. 
+Berkeley DB C++ Framework is written in C++. 
 [Cmake](https://cmake.org/) is used for building C++ applications.
 The build requires the latest version, currently 3.26.1.
 The version available from`apt`is too old to use, so it must be built from source.
@@ -237,7 +234,7 @@ This section includes Visual Studio components required to build the project.
 Download and run the 64-bit Git for Windows installer
 from the [Git download website](https://git-scm.com/download/win).
 ### Cmake <a id="windows-cmake-tool"/>
-IMDB Berkeley DB is written in C++. 
+Berkeley DB C++ Framework is written in C++. 
 [Cmake](https://cmake.org/) is used for building C++ applications.
 The build requires the latest version, currently 3.26.1.
 Select the latest Windows version from the`Windows x64 Installer`
@@ -389,43 +386,6 @@ $ cmake ..
     - json-c.lib
 - include files are in`json-c`and`json-c/build`
 
-
-### OATPP++ application server <a id="oatpp++-application-server-development"/>
-- [IMDB database] <a id="imdb-database-development"/>
-
-## IMDB database <a id="imdb-database"/>
-
-- Windows installation
-    - Environment variables
-        - BDB_HOME   db-18.1.40\build_windows
-        - JSONC_HOME json\json-c
-    - Visual Studio
-        - Additional Include Directories
-            - $(BDB_HOME)
-            - $(JSONC_HOME)
-            - $(JSONC_HOME)\build
-        - Additional Library Directories
-            - %BDB_HOME%\x64\Debug
-            - %JSONC_HOME%\build\Debug
-    - Required tools
-- Linux installation
-    - Environment variables
-    - Required tools
-- API
-
-
-#### Windows build
-Soft link Berkeley DB and json-c installs to the directory above the IMDB Berkeley home:
-```
-cd imdb-berkeley-db/..
-ln -s ../installs/linux/berkeleydb/db-18.1.40 .
-ln -s ../installs/linux/json/json-c .
-```
-Copy these files from`db-18.1.40\build_windows\x64\Debug`
-to`imdb-berkeley-db\src\cxx\bdb_win\db_database_load`:
-- `libdb181d.dll`
-- `libdb181d.exp`
-- `libdb181d.lib`
 
 
 
