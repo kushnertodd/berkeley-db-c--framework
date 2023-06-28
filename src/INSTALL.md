@@ -16,7 +16,6 @@ Instructions to build for these platforms follow.
     - [OpenSSL Library](#linux-openssl-library)
     - [json-c Library](#linux-json-c-library)
     - [Berekley DB Library](#linux-berkeley-db-library)
-    - [OATPP++ Library](#linux-oatpp-library)
 - [Windows development tools and libraries installation](#windows-development)
   - [Windows C++ Development Tools](#windows-c++-development-tools)
     - [Visual Studio](#visual-studio-2022-development)
@@ -26,7 +25,6 @@ Instructions to build for these platforms follow.
   - [Windows C++ Libraries](#windows-c++-libraries)
     - [Berekley DB](#berekley-db-development)
     - [Json-c](#json-c-development)
-    - [OATPP++ application server](#oatpp++-application-server-development)
 
 # Linux development tools and libraries <a id="linux-development"/>
 These are instructions to prepare the Linux build environment.
@@ -195,15 +193,6 @@ There are some other`configure` arguments described in these files:
 - `$BDB_HOME/docs/installation/build_unix_conf.html`  
 - `$BDB_HOME/docs/installation/build_unix_flags.html` 
 
-### OATPP++ Library <a id="linux-oatpp-library"/>
-[OATPP++](https://oatpp.io/) C++ web framework library is used to create a web interface
-- [OATPP++](https://oatpp.io/) application server <a id="oatpp++-application-server-development"/>
--  Open source C++ web framework
-
-  - Windows installation
-  - Linux installation
-  - Environment variables
-  - API
 # Windows development tools and libraries installation <a id="windows-development"/>
 - Windows development was done under Windows 10
   - Windows 11 is claimed compatible but is reportedly bloatware
