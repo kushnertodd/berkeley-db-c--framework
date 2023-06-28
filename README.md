@@ -6,9 +6,9 @@ C++ framework to improve Berkeley DB developer efficiency and reduce programming
     - [The purpose of Databases](#database-purpose)
     - [Advantages of Berekley DB](#berekley-db-advantages)
     - [Berekley DB resources](#berekley-db-resources)
-- [Using the Berkeley DB C++ Framework](#using-the-framework)
 - [Installing the necessary Berkeley DB components](#installing-the-components)
-
+- [Using the Berkeley DB C++ Framework](#using-the-framework)
+    - [Sample application](#sample-application)
 ## Background <a name="background"/>
 [Oracle Berkeley DB](https://www.oracle.com/database/technologies/related/berkeleydb.html)  provides highly efficient 
 storing, managaging, and accessing of large sets of data.  
@@ -83,23 +83,9 @@ to understand how the framework works 'under the hood'.
 - [Berkeley DB book by Sleepycat Software](https://www.amazon.com/Berkeley-DB-SLEEPYCAT-Sleepycat-Software/dp/0735710643)
 - [The Berkeley DB Book by Himanshu Yadava](https://www.amazon.com/Berkeley-DB-Book-Himanshu-Yadava/dp/1430211954)
 
-## Using the Berkeley DB C++ Framework<a name="using the framework"/>
-
-### Sample application
-A sample simple database application using the Framework is included.
-It is based on the example application included in the basic
-Berkeley DB software download described in
-[Getting Started with
-  Berkeley DB
-  for C++](https://www.oracle.com/technetwork/products/berkeleydb/berkeleydb-core-cxx-gsg-160938.pdf).
-Read that reference before reading this description of the application implemented in 
-the Framework, it will provide an introduction to the basic library 
-and allow a comparison of the ease of implementing the application
-with the basic library and the framework.
-
 ## Installing the necessary Berkeley DB components<a name="installing-the-components"/>
 The Framework requires a number of software packages are installed.
-Instructions to install them are provide in [this document](./INSTALL.md).
+Instructions to install them are provide in [this document](src/INSTALL.md).
 These include:  
 - The Oracle Berkeley DB library
 - The `json-c` JSON library
@@ -112,3 +98,18 @@ After release the ability to build and run under native Windows
 using Visual Studio will be added.
 `Git` is recommended for version control of your developing application.
 
+## Using the Berkeley DB C++ Framework<a name="using the framework"/>
+
+### Sample application<a name="sample-application"/>
+A sample simple database application using the Framework is included.
+It is based on the example application included in the basic
+Berkeley DB software download described in
+[Getting Started with
+Berkeley DB
+for C++](https://www.oracle.com/technetwork/products/berkeleydb/berkeleydb-core-cxx-gsg-160938.pdf).
+Read that reference before reading this description of the application implemented in
+the Framework, it will provide an introduction to the basic library
+and allow a comparison of the ease of implementing the application
+with the basic library and the framework.
+
+  
