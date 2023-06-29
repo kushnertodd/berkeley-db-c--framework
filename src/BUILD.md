@@ -7,7 +7,11 @@ $ cmake -B build -S .
 ```
 - Build the Doxygen html documentation files with:
 ```
-# cmake --build build --target docs
+$ cmake --build build --target docs
 ```
 (use `cmake-build-debug` instead of `build` if using Clion).
 The Doxygen html files will be in `src/build/_build/html`.
+- Run this to test the build:
+```
+$ sh run.sh
+```
