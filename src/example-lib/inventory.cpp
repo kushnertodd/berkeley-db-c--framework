@@ -22,7 +22,7 @@ double string_to_double(const std::string &real_str, Bdb_errors &errors) {
     return d;
   }
   catch (std::exception &err) {
-    errors.add("Misc_utils::string_to_real",
+    errors.add("Misc_utils::string_to_double",
                "1",
                "invalid real '" + std::string(real_str) + "': " + std::string(err.what()));
   }
@@ -124,7 +124,7 @@ void Inventory_DTO::parse(int count, const std::string &line, Bdb_errors &errors
         vendor_ = token_str;
         break;
       default:
-        errors.add("Name_DTO::create", "3", "too many name fields on line "
+        errors.add("Inventory_DTO::parse", "1", "too many name fields on line "
             + Bdb_tokens::line_print(count, line));
     }
     if (errors.has())
@@ -133,7 +133,7 @@ void Inventory_DTO::parse(int count, const std::string &line, Bdb_errors &errors
   }
   // Store the tokens as per structure members , where (i==0) is first member and so on..
   if (i != 6 && !errors.has())
-    errors.add("Inventory_DTO::create", "4", "too few name fields on line "
+    errors.add("Inventory_DTO::parse", "2", "too few name fields on line "
         + Bdb_tokens::line_print(count, line));
 }
 

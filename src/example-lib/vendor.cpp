@@ -39,7 +39,7 @@ void Vendor_DTO::parse(int count, const std::string &line, Bdb_errors &errors, c
         sales_rep_phone = token_str;
         break;
       default:
-        errors.add("Name_DTO::create", "3", "too many name fields on line "
+        errors.add("Vendor_DTO::parse", "1", "too many name fields on line "
             + Bdb_tokens::line_print(count, line));
     }
     if (errors.has())
@@ -48,7 +48,7 @@ void Vendor_DTO::parse(int count, const std::string &line, Bdb_errors &errors, c
   }
   // Store the tokens as per structure members , where (i==0) is first member and so on..
   if (i != 8 && !errors.has())
-    errors.add("Name_DTO::create", "4", "too few name fields on line "
+    errors.add("Vendor_DTO::parse", "2", "too few name fields on line "
         + Bdb_tokens::line_print(count, line));
 }
 

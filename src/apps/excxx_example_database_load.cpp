@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
         db_home = optarg;
         break;
       case ':':
-        errors.add("Imdb_app_init::Imdb_app_init",
+        errors.add("excxx_example_database_load",
                    "1",
                    "Option -" + char_to_string((char) ch) + " requires an argument");
         break;

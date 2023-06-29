@@ -321,7 +321,7 @@ void Bdb_databases_config::select(const std::string &db_name,
       primary_database_config = it.second;
       return;
     }
-  errors.add("", "1", "primary database config name " + db_name + " not found");
+  errors.add("Bdb_databases_config::select", "1", "primary database config name " + db_name + " not found");
 }
 
 /*!

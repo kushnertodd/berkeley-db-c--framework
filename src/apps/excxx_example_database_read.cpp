@@ -70,12 +70,12 @@ int main(int argc, char *argv[]) {
         item_name = optarg;
         break;
       case ':':
-        errors.add("Imdb_app_init::Imdb_app_init",
+        errors.add("excxx_example_database_read",
                    "1",
                    "Option -" + char_to_string((char) ch) + " requires an argument");
       case '?':
       default:
-        errors.add("excxx_example_database_load", "2", "Invalid option '-" + char_to_string((char) ch));
+        errors.add("excxx_example_database_read", "2", "Invalid option '-" + char_to_string((char) ch));
         break;
     }
 
@@ -86,7 +86,7 @@ int main(int argc, char *argv[]) {
     if (bdb_json != nullptr) {
       bdb_databases_config.from_json(bdb_json, errors);
     } else
-      errors.add("excxx_example_database_load",
+      errors.add("excxx_example_database_read",
                  "3",
                  "invalid json file " + db_config_filename + "(error: " + db_strerror(errno) + ")");
   }
