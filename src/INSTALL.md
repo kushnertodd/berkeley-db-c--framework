@@ -8,12 +8,13 @@ Instructions to build for these platforms follow.
     - [JetBrains CLion](#jetbrains-clion)
     - [WSL2 Linux distribution for Windows 10](#windows-10-wsl2-linux-distributions)
     - [Windows Terminal](#windows-terminal-tool)
-    - [Linux Build Tools](linux-build-tools)
+    - [Linux Build Tools](#linux-build-tools)
     - [Git](#linux-git-tool)
     - [Cmake](#linux-cmake-tool)
   - [Linux C++ Libraries](#linux-c++-libraries)
     - [pthreads Library](#linux-pthreads-library)
     - [OpenSSL Library](#linux-openssl-library)
+    - [Doxygen](#linux-doxygen)
     - [json-c Library](#linux-json-c-library)
     - [Berekley DB Library](#linux-berkeley-db-library)
 - [Windows development tools and libraries installation](#windows-development)
@@ -142,6 +143,13 @@ It can be [installed](https://learnubuntu.com/install-openssl/) these instructio
 ```
 $ sudo apt-get update
 $ sudo apt install openssl
+```
+### Doxygen <a id="linux-doxygen"/>
+Doxygen generates Javadoc-like html files from C++ source code. 
+It can be installed with these [instructions](https://www.tutorialspoint.com/how-to-install-doxygen-on-ubuntu):
+```
+$ sudo apt-get doxygen
+$ sudo apt-get opt
 ```
 ### json-c Library <a id="linux-json-c-library"/> 
 [json-c](https://github.com/json-c/json-c) is a C-based JSON manipulation library.
