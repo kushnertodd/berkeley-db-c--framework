@@ -31,8 +31,12 @@ class Bdb_dbt {
     if (buffer)
       std::free(buffer);
   }
-
   Bdb_dbt() = default;
+  Bdb_dbt(void* data, size_t size) : dbt(data, size) {}
+  Bdb_dbt(const Bdb_dbt& other) = delete;
+  Bdb_dbt& operator=(const Bdb_dbt& other) = delete;
+  Bdb_dbt(Bdb_dbt&& other) noexcept = delete;
+  Bdb_dbt& operator=(Bdb_dbt&& other) noexcept = delete;
 
   /*!
    * @brief populates Dbt with serialized dto data
