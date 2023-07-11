@@ -223,4 +223,70 @@ records are omitted because they were not needed for the initial application
 for which the Framework was developed, but classes to support them can 
 added in a manner consistent with the rest of the Framework.
 
-  
+# Appendix - Format of databases definition JSON file
+
+The databases JSON definition allows having the Framework open up the databases automatically. 
+The outer level JSON descriptors define an array of primary databases, and each may optionally 
+have an array of secondary databases.
+The Framework handles associating the secondary databases with the primary database
+automatically.
+- The primary and secondary database descriptors have a "class_name" field, which is fixed, 
+that verifies that the JSON is a valid definition file
+- Each database has a "name", used to access the database descriptor as below,
+and a "filename". 
+The filename will be opened in a directory specified by a "db_home" (`-d`) command
+line argument as seen in the Getting Started application example.
+- Primary databases have an optional "duplicates" field that can indicate
+if duplicate keys are allowed.
+- Secondary databases always permit duplicate keys. 
+They require a "key_extractor" field that specifies a secondadry database
+key extractor callback routine. The programmer must create the following function
+that can look up the actual key extractor function based on the name.
+See the example application:
+`````
+Exeample_key_extractor::key_extractor_fct(const char *key_extractor_name)
+`````
+### Example JSON database definition file:
+`````json
+{
+  "class_name": "Bdb_databases_config",
+  "primary_databases": [
+    {
+      "class_name": "Primary_database_config",
+      "name": "vendor",
+      "filename": "vendor.db",
+      "duplicates": "true"
+    },
+    {
+      "class_name": "Primary_database_config",
+      "name": "inventory",
+      "filename": "inventory.db",
+      "secondary_databases": [
+        {
+          "class_name": "Secondary_database_config",
+          "name": "item_name",
+          "filename": "item_name.sdb",
+          "key_extractor": "get_item_name"
+        }
+      ]
+    }
+  ]
+}
+```
+### Example code to open a database
+This is sample code to open a primary database.
+The primary database constructor takes the secondary database key extractor
+as an argument for when it automatically associates the primary database
+with the secondary database.
+See code in the example main program for examples and also for opening
+a secondary database. The database constructor opens theh database,
+and the destructor closes the database:
+[excxx_example_database_read.cpp](src%2Fapps%2Fexcxx_example_database_read.cpp)
+```
+    Primary_database_config inventory_primary_database_config;
+    bdb_databases_config.select("inventory", inventory_primary_database_config, errors);
+    if (!errors.has()) {
+      std::unique_ptr<Bdb_key_extractor> example_key_extractor = std::make_unique<Example_key_extractor>();
+      Primary_database inventory_db(inventory_primary_database_config, example_key_extractor.get(), db_home, errors);
+      ...
+```
