@@ -188,6 +188,28 @@ and provides simpler access to the library.
 Utility classes such as Bdb_errors and Bdb_tokens are provided to 
 simplify error tracking and string token processing.
 
+### The Framework code
+The Framework was developed for Linux using the `cmake` build utility.
+An early version worked with Visual Studio in Windows
+and presumably could be modified to support the 
+Berkeley DB Windows library version readily.
+
+The Framework is distributed from a Github repository
+currently under the MIT license.
+The distribution can be cloned with Git from
+https://github.com/kushnertodd/berkeley-db-cpp-framework.
+Installation instructions, requiring the Berkeley DB
+and `json-c` distributions, are included in INSTALL.db
+markdown file. Build instructions are in 
+BUILD.db.
+
+Jetbrains CLion was used as an environment to develop
+the Framework and is a nice option for development.
+Building the Framework with the cmake `docs` target
+generated Doxygen documentation for the low lever classes
+in HTML format.
+Enlisted additional developers as collaborators is encouraged.
+
 ## Summary
 The Framework classes work together to give the programmer an intuitive
 interface to the Berkeley C++ library. 
